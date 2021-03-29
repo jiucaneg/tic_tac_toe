@@ -82,9 +82,4 @@ def game():
 
 
 if __name__ == "__main__":
-    start = input("Хотите начать игру? Если да введите '1' : ")
-    if start == "1":
-        for key in board_keys:
-            theBoard[key] = " "
-
-        game()
+    game()
