@@ -48,48 +48,20 @@ def game():
 
         # Теперь мы будем проверять, выиграл ли игрок X или O, для каждого хода после 5 ходов.
         if count >= 5:
-            if theBoard['7'] == theBoard['8'] == theBoard['9'] != ' ':  # по верхней горизонтальной линии
+            if (theBoard['7'] == theBoard['8'] == theBoard['9'] != ' ') or \
+                    (theBoard['4'] == theBoard['5'] == theBoard['6'] != ' ') or \
+                    (theBoard['1'] == theBoard['2'] == theBoard['3'] != ' ') or \
+                    (theBoard['1'] == theBoard['4'] == theBoard['7'] != ' ') or \
+                    (theBoard['2'] == theBoard['5'] == theBoard['8'] != ' ') or \
+                    (theBoard['3'] == theBoard['6'] == theBoard['9'] != ' ') or \
+                    (theBoard['7'] == theBoard['5'] == theBoard['3'] != ' ') or \
+                    (theBoard['1'] == theBoard['5'] == theBoard['9'] != ' '):
                 printBoard(theBoard)
                 print("\nКонец игры.\n")
-                print(" **** " + player + " выйграл. ****")
-                break
-            elif theBoard['4'] == theBoard['5'] == theBoard['6'] != ' ':  # по центральной горизонтальной линии
-                printBoard(theBoard)
-                print("\nКонец игры.\n")
-                print(" **** " + player + " выйграл. ****")
-                break
-            elif theBoard['1'] == theBoard['2'] == theBoard['3'] != ' ':  # по нижней горизонтальной линии
-                printBoard(theBoard)
-                print("\nКонец игры.\n")
-                print(" **** " + player + " выйграл. ****")
-                break
-            elif theBoard['1'] == theBoard['4'] == theBoard['7'] != ' ':  # по левой вертикальной линии
-                printBoard(theBoard)
-                print("\nКонец игры.\n")
-                print(" **** " + player + " выйграл. ****")
-                break
-            elif theBoard['2'] == theBoard['5'] == theBoard['8'] != ' ':  # по центральной вертикальной линии
-                printBoard(theBoard)
-                print("\nКонец игры.\n")
-                print(" **** " + player + " выйграл. ****")
-                break
-            elif theBoard['3'] == theBoard['6'] == theBoard['9'] != ' ':  # по правой вертикальной линии
-                printBoard(theBoard)
-                print("\nКонец игры.\n")
-                print(" **** " + player + " выйграл. ****")
-                break
-            elif theBoard['7'] == theBoard['5'] == theBoard['3'] != ' ':  # по первой диагонали
-                printBoard(theBoard)
-                print("\nКонец игры.\n")
-                print(" **** " + player + " выйграл. ****")
-                break
-            elif theBoard['1'] == theBoard['5'] == theBoard['9'] != ' ':  # по второй диагонали
-                printBoard(theBoard)
-                print("\nКонец игры.\n")
-                print(" **** " + player + " выйграл. ****")
+                print(" **** Игрок " + player + " выйграл. ****")
                 break
 
-                # Если ни X, ни O не выиграют, а доска заполнена, мы объявляем результат как «ничья»..
+        # Если ни X, ни O не выиграют, а доска заполнена, мы объявляем результат как «ничья»..
         if count == 9:
             print("\nКонец игры.\n")
             print("Ничья!!!")
@@ -101,7 +73,7 @@ def game():
             player = 'X'
 
             # Перезапуск игры
-    restart = input("Хотите начать заново? Если да введите '1'.")
+    restart = input("Хотите начать заново? Если да введите '1' : ")
     if restart == "1":
         for key in board_keys:
             theBoard[key] = " "
@@ -110,18 +82,7 @@ def game():
 
 
 if __name__ == "__main__":
-    print('''Приветствую вас в игре "Крестики Нолики".
-Нам дано поле из девяти клеток!!! Каждая клетка поля соответсвует циферному значению
-keypad на клавиатуре. В игре учавствуют 2 игрока "X" и "0". По очереди они ставят 
-в свободную клетку 'X' и '0' соответственно. Выигрывает игрок у которого первым получится 
-занять три клетки подряд в одну линию (по горизонтали или вертикали, или диагонали).''')
-    print('7' + '|' + '8' + '|' + '9')
-    print('-+-+-')
-    print('4' + '|' + '5' + '|' + '6')
-    print('-+-+-')
-    print('1' + '|' + '2' + '|' + '3')
-    print("="*50)
-    start = input("Хотите начать игру? Если да введите '1'.")
+    start = input("Хотите начать игру? Если да введите '1' : ")
     if start == "1":
         for key in board_keys:
             theBoard[key] = " "
