@@ -65,6 +65,7 @@ def game():
         if count == 9:
             print("\nКонец игры.\n")
             print("Ничья!!!")
+            break
 
         # Меняем игрока после каждого хода.
         if player == 'X':
