@@ -64,9 +64,9 @@ def game_all(place):
         counter += 1
 
 print("")
-print("****************")
+print("*"*15)
 print("Крестики-нолики.")
-print("****************")
+print("*"*15)
 print("")
 print("Первым ходит \"х\".")
 print("")
