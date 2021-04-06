@@ -12,7 +12,7 @@ def verify(f, gamer):
         if verify_cell(f[q][0], f[q][1], f[q][2], gamer) or \
         verify_cell(f[0][q], f[1][q], f[2][q], gamer) or \
         verify_cell(f[0][0], f[1][1], f[2][2], gamer) or \
-        verify_cell(f[2][2], f[1][1], f[0][2], gamer):
+        verify_cell(f[2][0], f[1][1], f[0][2], gamer):
             return True
     return False
 
